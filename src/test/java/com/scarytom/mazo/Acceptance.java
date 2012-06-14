@@ -27,4 +27,9 @@ public class Acceptance {
 	public void know_where_the_goal_is() {
 		assertThat(maze.goal(), is(new Point(10, 2)));
 	}
+	
+	@Test
+	public void head_for_the_goal() {
+		assertThat(new SatNav(maze).direction(), is("N"));
+	}
 }
