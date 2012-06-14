@@ -5,9 +5,7 @@ import static org.hamcrest.Matchers.arrayContainingInAnyOrder;
 import static org.hamcrest.Matchers.is;
 
 import java.awt.Point;
-import java.util.Arrays;
 
-import org.hamcrest.Matchers;
 import org.junit.Test;
 
 public class Acceptance {
