@@ -90,7 +90,7 @@
     <target name="release" description="Create a tested release jar file" depends="-version-for-release,snapshot"/>
 
     <target name="deploy" description="deploy it">
-        <zip destfile="${build.dir}/release.zip">
+        <zip destfile="${build.dir}/release.zip" level="9">
         	<zipfileset file="${build.dir}/${ant.project.name}-main-${version.label}.jar" prefix="scarytom"/>
         	<zipfileset file="move" prefix="scarytom"/>
         </zip>
