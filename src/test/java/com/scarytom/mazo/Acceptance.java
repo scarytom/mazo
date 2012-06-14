@@ -6,14 +6,14 @@ import static org.hamcrest.Matchers.is;
 import org.junit.Test;
 
 public class Acceptance {
+	private final String rawMaze = "You are player 1\n***********\n*..1...__.*\n....***...F\n*2........*\n***********";
+	private final Maze maze = new Maze(rawMaze);
 
 	@Test
-	public void test() {
-		String rawMaze = "You are player 1\n***********\n*..1...__.*\n....***...F\n*2........*\n***********";
-	    Maze maze = new Maze(rawMaze);
-	    
-	    assertThat(maze.rowCount(), is(5));
-	    assertThat(maze.player(), is("1"));
+	public void know_the_maze() {
+		assertThat(maze.player(), is("1"));
+	    assertThat(maze.height(), is(5));
+	    assertThat(maze.width(), is(11));
 	}
 
 }
