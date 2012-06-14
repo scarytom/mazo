@@ -48,4 +48,8 @@ public final class Maze {
 		}
 		return null;
 	}
+
+	public Point goal() {
+		return locationOf("F");
+	}
 }

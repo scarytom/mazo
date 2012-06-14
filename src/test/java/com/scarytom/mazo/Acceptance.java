@@ -23,4 +23,8 @@ public class Acceptance {
 		assertThat(maze.me(), is(new Point(3, 1)));
 	}
 
+	@Test
+	public void know_where_the_goal_is() {
+		assertThat(maze.goal(), is(new Point(10, 2)));
+	}
 }
