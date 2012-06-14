@@ -30,6 +30,6 @@ public class Acceptance {
 	
 	@Test
 	public void head_for_the_goal() {
-		assertThat(new SatNav(maze).direction(), is("N"));
+		assertThat(new SatNav(maze).direction(), is("W"));
 	}
 }
