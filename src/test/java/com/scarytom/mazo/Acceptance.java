@@ -13,6 +13,7 @@ public class Acceptance {
 	    Maze maze = new Maze(rawMaze);
 	    
 	    assertThat(maze.rowCount(), is(5));
+	    assertThat(maze.player(), is("1"));
 	}
 
 }
