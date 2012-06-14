@@ -22,13 +22,13 @@ public final class Maze {
 			content[i-1] = rows[i];
 		}
 	}
+	
+	public String player() {
+		return player;
+	}
 
 	public int height() {
 		return height;
-	}
-
-	public String player() {
-		return player;
 	}
 
 	public int width() {
@@ -37,6 +37,10 @@ public final class Maze {
 
 	public Point me() {
 		return locationOf(player);
+	}
+
+	public Point goal() {
+		return locationOf("F");
 	}
 
 	private Point locationOf(String item) {
@@ -49,7 +53,4 @@ public final class Maze {
 		return null;
 	}
 
-	public Point goal() {
-		return locationOf("F");
-	}
 }
