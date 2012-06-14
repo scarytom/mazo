@@ -16,7 +16,7 @@ public final class SatNav {
 
 	private String directionOf(Point me, Point goal) {
 		if (me.y == goal.y) {
-		    return me.x > goal.x ? "E" : "W";
+		    return me.x > goal.x ? "W" : "E";
 		}
 		return (me.y > goal.y) ? "N" : "S";
 	}

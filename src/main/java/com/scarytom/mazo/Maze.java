@@ -1,6 +1,8 @@
 package com.scarytom.mazo;
 
 import java.awt.Point;
+import java.util.ArrayList;
+import java.util.List;
 
 public final class Maze {
 
@@ -53,4 +55,27 @@ public final class Maze {
 		return null;
 	}
 
+	
+	
+	public String[] exitsFrom(Point point) {
+	    List<String> result = new ArrayList<String>();
+		
+		if (".".equals(thingAt(new Point(point.x - 1, point.y)))) {
+			result.add("W");
+		}
+		if (".".equals(thingAt(new Point(point.x + 1, point.y)))) {
+			result.add("E");
+		}
+		if (".".equals(thingAt(new Point(point.x, point.y - 1)))) {
+			result.add("N");
+		}
+		if (".".equals(thingAt(new Point(point.x, point.y + 1)))) {
+			result.add("S");
+		}
+		return result.toArray(new String[result.size()]);
+	}
+
+	private String thingAt(Point point) {
+		return content[point.y].substring(point.x, point.x + 1);
+	}
 }

@@ -1,10 +1,13 @@
 package com.scarytom.mazo;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.arrayContainingInAnyOrder;
 import static org.hamcrest.Matchers.is;
 
 import java.awt.Point;
+import java.util.Arrays;
 
+import org.hamcrest.Matchers;
 import org.junit.Test;
 
 public class Acceptance {
@@ -27,9 +30,15 @@ public class Acceptance {
 	public void know_where_the_goal_is() {
 		assertThat(maze.goal(), is(new Point(10, 2)));
 	}
+
+	@Test
+	public void determine_exits() {
+		String[] exitsFrom = maze.exitsFrom(new Point(5,1));
+		assertThat(exitsFrom, is(arrayContainingInAnyOrder("E", "W")));
+	}
 	
 	@Test
 	public void head_for_the_goal() {
-		assertThat(new SatNav(maze).direction(), is("W"));
+		assertThat(new SatNav(maze).direction(), is("S"));
 	}
 }
